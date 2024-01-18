@@ -1,12 +1,8 @@
 const Practice = () => {
-  function range(min: number, max: number): number[] {
-    const result = [];
-    for (let i = min; i < max; i++) {
-      result.push(i);
-    }
-    return max;
+  function helloWorld(n: number): void {
+    for (let i = 0; i < n; i++) console.log("hello world");
   }
-  console.log(range(5, 10));
+  helloWorld(5);
   return <div></div>;
 };
 
