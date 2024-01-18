@@ -1,17 +1,15 @@
 const Practice = () => {
-  const sum = (...arg: number[]): number => {
-    let i = 0;
-    for (const num of arg) {
-      i += num;
-    }
-    return i;
+  type User = {
+    name: string;
+    age: number;
   };
-  const num = [1, 2, 4];
-  console.log(num);
-  console.log(...num);
-  //   console.log(sum(num));
-  console.log(sum(1, 24, 59));
-  console.log(sum(1, 18274));
+  const getUser = (u: User): string => u.name;
+  const users = [
+    { name: "jon", age: 7 },
+    { name: "adam", age: 60 },
+  ];
+  const i = users.map(getUser);
+  console.log(i);
   return <div></div>;
 };
 
