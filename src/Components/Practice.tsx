@@ -4,7 +4,7 @@ const Practice = () => {
     for (let i = min; i < max; i++) {
       result.push(i);
     }
-    return result;
+    return max;
   }
   console.log(range(5, 10));
   return <div></div>;
