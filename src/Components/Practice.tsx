@@ -6,7 +6,10 @@ const Practice = () => {
     }
     return i;
   };
-  console.log(sum(1, 2, 4));
+  const num = [1, 2, 4];
+  console.log(num);
+  console.log(...num);
+  //   console.log(sum(num));
   console.log(sum(1, 24, 59));
   console.log(sum(1, 18274));
   return <div></div>;
