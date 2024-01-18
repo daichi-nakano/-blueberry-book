@@ -1,8 +1,13 @@
 const Practice = () => {
-  function helloWorld(n: number): void {
-    for (let i = 0; i < n; i++) console.log("hello world");
-  }
-  helloWorld(5);
+  type Human = {
+    height: number;
+    weight: number;
+  };
+  const calc = function ({ weight, height }: Human): number {
+    return weight / height ** 2;
+  };
+  const uhyo: Human = { weight: 63, height: 1.8 };
+  console.log(calc(uhyo));
   return <div></div>;
 };
 
