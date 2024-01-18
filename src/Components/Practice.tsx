@@ -1,17 +1,14 @@
 const Practice = () => {
-  type Human = {
-    height: number;
-    weight: number;
+  const sum = (...arg: number[]): number => {
+    let i = 0;
+    for (const num of arg) {
+      i += num;
+    }
+    return i;
   };
-  type ReturnObj = {
-    bmi: number;
-  };
-
-  const calc = ({ weight, height }: Human): ReturnObj => ({
-    bmi: weight / height ** 2,
-  });
-  const uhyo: Human = { weight: 63, height: 1.8 };
-  console.log(calc(uhyo));
+  console.log(sum(1, 2, 4));
+  console.log(sum(1, 24, 59));
+  console.log(sum(1, 18274));
   return <div></div>;
 };
 
