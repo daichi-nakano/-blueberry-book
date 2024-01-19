@@ -1,16 +1,19 @@
 const Practice = () => {
-  //コールシグネチャによる関数型の表現
-  type MyF = {
-    isUsed?: boolean;
-    (arg: number): void;
+  type HasName = {
+    name: string;
+  };
+  type HasNameAndAge = {
+    name: string;
+    age: number;
   };
 
-  const double: MyF = (arg: number) => {
-    console.log(arg * 2);
-  };
+  const fromAge = (age: number): HasNameAndAge => ({
+    name: "jon Smith",
+    age,
+  });
 
-  double(3);
-  console.log(double.isUsed);
+  const f: (age: number) => HasName = fromAge;
+  const obj: HasName = f(100);
   return <div></div>;
 };
 
