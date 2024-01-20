@@ -1,19 +1,11 @@
 const Practice = () => {
-  type HasName = {
-    name: string;
+  const double = <T,>(func: (arg: T) => T): ((arg: T) => T) => {
+    return (arg) => func(func(arg));
   };
-  type HasNameAndAge = {
-    name: string;
-    age: number;
-  };
+  type NumberToNumber = (arg: number) => number;
 
-  const fromAge = (age: number): HasNameAndAge => ({
-    name: "jon Smith",
-    age,
-  });
-
-  const f: (age: number) => HasName = fromAge;
-  const obj: HasName = f(100);
+  const plus2: NumberToNumber = double((x) => x + 1);
+  console.log(plus2(2));
   return <div></div>;
 };
 
