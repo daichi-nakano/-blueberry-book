@@ -1,11 +1,20 @@
 const Practice = () => {
-  const double = <T,>(func: (arg: T) => T): ((arg: T) => T) => {
-    return (arg) => func(func(arg));
-  };
-  type NumberToNumber = (arg: number) => number;
-
-  const plus2: NumberToNumber = double((x) => x + 1);
-  console.log(plus2(2));
+  for (let i = 1; i <= 100; i++) {
+    type F = (arg: number) => number | "FizzBuzz" | "Fizz" | "Buzz";
+    const getFizzBuzzString: F = <T,>(arg: T) => {
+      if (i % 3 === 0 && i % 5 === 0) {
+        return "FizzBuzz";
+      } else if (i % 3 === 0) {
+        return "Fizz";
+      } else if (i % 5 === 0) {
+        return "Buzz";
+      } else {
+        return i;
+      }
+    };
+    const message = getFizzBuzzString(i);
+    console.log(message);
+  }
   return <div></div>;
 };
 
