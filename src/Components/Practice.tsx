@@ -1,12 +1,16 @@
 const Practice = () => {
-  function range(min: number, max: number): number[] {
-    const result = [];
-    for (let i = min; i < max; i++) {
-      result.push(i);
-    }
-    return result;
+  class User {
+    name: string = "";
+    age: number = 0;
   }
-  console.log(range(5, 10));
+
+  const obj = {
+    cl: User,
+  };
+
+  const uhyo = new obj.cl();
+  console.log(uhyo.name);
+  console.log(uhyo.age);
   return <div></div>;
 };
 
