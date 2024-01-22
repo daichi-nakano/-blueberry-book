@@ -1,6 +1,6 @@
 const Practice = () => {
   class User {
-    name: string = "";
+    name?: string;
     age: number = 0;
   }
 
@@ -9,6 +9,7 @@ const Practice = () => {
   };
 
   const uhyo = new obj.cl();
+  uhyo.name = "D";
   console.log(uhyo.name);
   console.log(uhyo.age);
   return <div></div>;
