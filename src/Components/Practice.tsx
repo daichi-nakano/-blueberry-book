@@ -1,20 +1,14 @@
 const Practice = () => {
-  for (let i = 1; i <= 100; i++) {
-    type F = (arg: number) => number | "FizzBuzz" | "Fizz" | "Buzz";
-    const getFizzBuzzString: F = <T,>(arg: T) => {
-      if (i % 3 === 0 && i % 5 === 0) {
-        return "FizzBuzz";
-      } else if (i % 3 === 0) {
-        return "Fizz";
-      } else if (i % 5 === 0) {
-        return "Buzz";
-      } else {
-        return i;
-      }
-    };
-    const message = getFizzBuzzString(i);
-    console.log(message);
-  }
+  type F = (x: number) => number;
+  const map = (array: number[], callback: F): number[] => {
+    const result: number[] = [];
+    for (const num of array) result.push(callback(num));
+    return result;
+  };
+
+  const data = [1, 2, 3, 5, 8, 13];
+  const result = map(data, (x) => x * 10);
+  console.log(result);
   return <div></div>;
 };
 
