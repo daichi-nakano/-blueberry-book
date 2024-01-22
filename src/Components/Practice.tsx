@@ -1,21 +1,14 @@
 const Practice = () => {
-  type User = {
-    name: string;
-    age: number;
+  type F = (x: number) => number;
+  const map = (array: number[], callback: F): number[] => {
+    const result: number[] = [];
+    for (const num of array) result.push(callback(num));
+    return result;
   };
-  const users: User[] = [
-    { name: "jon", age: 7 },
-    { name: "adam", age: 60 },
-  ];
-  const i = users.map((u: User): string => u.name);
-  console.log(i);
-  //20歳以上のユーザーだけの配列
-  const adultUsers = users.filter((u: User) => u.age > 20);
-  //名前がjohnで始まるユーザーを探して返す
-  const jo = users.find((u: User) => u.name.startsWith("jon"));
-  console.log(jo);
-  console.log(adultUsers);
 
+  const data = [1, 2, 3, 5, 8, 13];
+  const result = map(data, (x) => x * 10);
+  console.log(result);
   return <div></div>;
 };
 
