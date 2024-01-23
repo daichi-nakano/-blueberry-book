@@ -1,9 +1,8 @@
 const Practice = () => {
   class User {
-    name?: string;
-    age: number = 0;
+    constructor(public name: string, private age: number) {}
 
-    isAdult = (): boolean => {
+    public isAdult = (): boolean => {
       return this.age >= 20;
     };
 
@@ -16,7 +15,8 @@ const Practice = () => {
     cl: User,
   };
 
-  const uhyo = new obj.cl();
+  const uhyo = new obj.cl("nakano", 65);
+  console.log(uhyo);
   uhyo.name = "D";
   console.log(uhyo.isAdult);
   uhyo.setAge(26);
