@@ -1,12 +1,18 @@
 const Practice = () => {
-  function range(min: number, max: number): number[] {
-    const result = [];
-    for (let i = min; i < max; i++) {
-      result.push(i);
-    }
-    return result;
+  type SignType = "plus" | "minus"
+  const singNumber = (type: SignType) => {
+    return type === "plus"? 1 : -1;
   }
-  console.log(range(5, 10));
+  function numberWithSign2(num: number, type: SignType | "none") {
+    if (type === "none") {
+      return 0;
+    }
+    return num * singNumber(type)
+  }
+
+  function numberWithSign3(num: number, type: SignType | "none") {
+    return type === "none"? 0 : singNumber(type);
+  }
   return <div></div>;
 };
 
