@@ -1,18 +1,13 @@
 const Practice = () => {
-  type SignType = "plus" | "minus"
-  const singNumber = (type: SignType) => {
-    return type === "plus"? 1 : -1;
-  }
-  function numberWithSign2(num: number, type: SignType | "none") {
-    if (type === "none") {
-      return 0;
-    }
-    return num * singNumber(type)
+  const sleep = (duration: number) => {
+    return new Promise<void>((resolve) => {
+      setTimeout(resolve, duration)
+    })
   }
 
-  function numberWithSign3(num: number, type: SignType | "none") {
-    return type === "none"? 0 : singNumber(type);
-  }
+  sleep(3000).then(() => {
+    console.log("3秒経ちました")
+  })
   return <div></div>;
 };
 
